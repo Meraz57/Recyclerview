@@ -21,9 +21,12 @@ class MainActivity : AppCompatActivity() {
         }
         val adapter=Adapter(data)
         recyclerView.adapter=adapter
+        adapter.setOnItemClickListener(object :Adapter.onItemClickListener{
+            override fun onItemClick(position: Int) {
+                Toast.makeText(applicationContext, "you Clicked image no:$position", Toast.LENGTH_SHORT).show()
+            }
 
-
-
+        })
 
     }
 
